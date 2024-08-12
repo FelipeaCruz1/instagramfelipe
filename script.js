@@ -24,3 +24,20 @@ function toggleMode() {
     )
   }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  let title = document.title
+  let speed = 300 // Velocidade da rolagem (em milissegundos)
+  let index = 0
+
+  function scrollTitle() {
+    document.title =
+      title.substring(index, title.length) + " " + title.substring(0, index)
+    index++
+    if (index > title.length) {
+      index = 0
+    }
+  }
+
+  setInterval(scrollTitle, speed)
+})
